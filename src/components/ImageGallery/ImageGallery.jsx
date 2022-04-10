@@ -22,7 +22,13 @@ function ImageGallery({ hits, setModalIdx, toggleModal }) {
 }
 
 ImageGallery.propTypes = {
-  hits: PropTypes.arrayOf(PropTypes.object.isRequired),
+  hits: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      webformatURL: PropTypes.string.isRequired,
+      tags: PropTypes.string.isRequired,
+    })
+  ),
   setModalIdx: PropTypes.func.isRequired,
   toggleModal: PropTypes.func.isRequired,
 };
